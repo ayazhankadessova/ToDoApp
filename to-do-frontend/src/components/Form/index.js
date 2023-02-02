@@ -1,12 +1,13 @@
 import React from 'react'
 import { FormContainer, Button, Input } from './styles'
 
-const Form = () => {
+function Form() {
   return (
-    <div>
-      <Button text='Submit'>Submit</Button>
-    </div>
+    <FormContainer>
+      <Input />
+      <Button>Add</Button>
+    </FormContainer>
   )
 }
 
-export default Form
+export default FormContainer
