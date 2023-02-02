@@ -4,10 +4,10 @@ import { FormContainer, Button, Input } from './styles'
 function Form() {
   return (
     <FormContainer>
-      <Input />
-      <Button>Add</Button>
+      <Input value='' type='text' role='input' />
+      <Button type='submit'>Add</Button>
     </FormContainer>
   )
 }
 
-export default FormContainer
+export default Form

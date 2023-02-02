@@ -1,0 +1,1 @@
+mongodb+srv://Ayazhan:***REMOVED***.mongodb.net/?retryWrites=true&w=majority
