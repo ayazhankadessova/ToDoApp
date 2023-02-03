@@ -14,6 +14,13 @@
 ```
 
 10. Change stylings
+11. Develop express app
 
+- pass const port = process.env.PORT to listen to whatever is in env Port variable. If you pass 3000 hard-coded to app.listen(), you're always listening on port 3000, which might be just for you, or not, depending on your requirements and the requirements of the environment in which you're running your server.
 
+12. Create .env in backend folder
+13. run server
 
+```
+node server.js
+```
