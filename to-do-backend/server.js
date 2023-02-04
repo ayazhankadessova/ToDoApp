@@ -12,6 +12,15 @@ dotenv.config()
 // 1) make constants
 // 2) use them
 
+// 1. get functions from todoController.js
+// 2. Import them to api endpoints as callbacks
+const {
+  getTodos,
+  createTodo,
+  updateTodo,
+  deleteTodo,
+} = require('./controllers/todoController')
+
 // App config
 const app = express()
 
@@ -40,3 +49,16 @@ mongoose
     console.log(err)
   })
 // API Endpoints
+
+// 1. Get Todo list
+// route, callback function from controller
+app.get('/todos', getTodos)
+
+// 2. Create a new Todo - post
+app.post('/todos', createTodo)
+
+// 3. Update a todo - using id
+app.put('/todos/:id', updateTodo)
+
+// 4. Delete a todo
+app.delete('/todos/:id', deleteTodo)
