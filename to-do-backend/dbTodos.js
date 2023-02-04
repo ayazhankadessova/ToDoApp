@@ -15,3 +15,9 @@ const todoSchema = Schema(
   },
   { timestamps: true }
 )
+
+//  We have the model now, all we need is to export it so it can be used elsewhere.
+// 1. create model: The first parameter of the mongoose.model is the name of the collection that will contain the documents (todos). The second parameter is the schema we defined earlier.
+// 2. export
+
+module.exports = mongoose.model('todos', todoSchema)
