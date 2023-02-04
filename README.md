@@ -24,3 +24,14 @@
 ```
 node server.js
 ```
+
+-
+
+Feb, 4
+
+Backend setup and complete:
+
+1. Schema setup in dbTodos.js (what will Todo look like? text, completed/not)
+2. API Endpointes, connection to mongodb database w/ mongoose
+
+- now: on the frontend, make api request to the local host of 8000 & the rest of the frontend
