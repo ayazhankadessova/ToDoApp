@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container } from './styles'
 import Form from '../Form'
 import axios from '../../axios'
@@ -7,6 +7,7 @@ const Todo = () => {
   const [input, setInput] = useState('')
   // usesate of Todos is empty array
   // to get all the Todos in the array format
+  // initial state - 2 empty arrays
   const [todos, setTodos] = useState([])
   // console.log(input, 'input')
 
@@ -20,6 +21,19 @@ const Todo = () => {
     } catch (err) {
       console.log(err.message)
     }
+  }
+
+  // What does useEffect do? By using this Hook, you tell React that your component needs to do something after render. React will remember
+  //the function you passed (we’ll refer to it as our “effect”), and call it later after performing the DOM updates. In this effect, we set
+  // the document title, but we could also perform data fetching or call some other imperative API.
+  // our useEffect works with callback functions
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  // async - Asynchronous programming is a technique that enables your program to start a potentially long-running task and still be able to be responsive to other events while that task runs, rather than having to wait until that task has finished. Once that task has finished, your program is presented with the result.
+  const addTodo = async () => {
+    console.log('addedtoDo')
   }
 
   console.log(todos, 'todos')
