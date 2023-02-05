@@ -32,7 +32,9 @@ const Todo = () => {
   }, [])
 
   // async - Asynchronous programming is a technique that enables your program to start a potentially long-running task and still be able to be responsive to other events while that task runs, rather than having to wait until that task has finished. Once that task has finished, your program is presented with the result.
-  const addTodo = async () => {
+  const addTodo = async (e) => {
+    // prevent screen refreshing
+    e.preventDefault()
     console.log('addedtoDo')
   }
 
@@ -42,7 +44,7 @@ const Todo = () => {
     <Container>
       <h2>List of ToDos</h2>
       {/* Form Component */}
-      <Form />
+      <Form input={input} setInput={setInput} addTodo={addTodo} />
       {/* To Do List */}
       {/* Key - to Do Completed or not? */}
       {/* giffy */}
