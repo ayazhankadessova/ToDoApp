@@ -6,6 +6,7 @@ const Container = styled.div`
   border-radius: 15px;
   /* top, bottom: 20px
   right, left: 30px */
+  margin: 20px 50px;
   padding: 5px 5px;
 `
 

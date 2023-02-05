@@ -8,17 +8,21 @@ const Todo = () => {
   // usesate of Todos is empty array
   // to get all the Todos in the array format
   const [todos, setTodos] = useState([])
-  console.log(input, 'input')
+  // console.log(input, 'input')
 
   // Create function to fetch all data from db
   const fetchData = async () => {
     try {
       // get everything from todos endpoint
       const response = await axios.get('/todos')
+      // set data from response as todos
+      setTodos(response.data)
     } catch (err) {
       console.log(err.message)
     }
   }
+
+  console.log(todos, 'todos')
 
   return (
     <Container>
