@@ -31,9 +31,9 @@ const connectionURI = process.env.MONGO_URI
 
 // Middleware
 // convert everything to json
-app.use(express.json)
+app.use(express.json())
 
-app.use(Cors)
+app.use(Cors())
 
 // DB config
 mongoose

@@ -1,8 +1,7 @@
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema
 
 // The instance of schema can now be used to define a schema.
-const todoSchema = Schema(
+const todoSchema = mongoose.Schema(
   {
     text: {
       type: String,
