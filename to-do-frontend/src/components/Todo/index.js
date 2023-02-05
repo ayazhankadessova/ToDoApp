@@ -35,7 +35,25 @@ const Todo = () => {
   const addTodo = async (e) => {
     // prevent screen refreshing
     e.preventDefault()
-    console.log('addedtoDo')
+
+    // if no input -> dont send
+    if (input.length === 0) {
+      return null
+    }
+    // if there are todos before that -> extend
+    await axios.post('/todos', [
+      {
+        // spread the data in
+        ...todos,
+        // and add new todo according to schema
+        text: input,
+        completed: false,
+      },
+    ])
+    fetchData()
+    // set input to empty
+    setInput('')
+    // console.log('addedtoDo')
   }
 
   console.log(todos, 'todos')
