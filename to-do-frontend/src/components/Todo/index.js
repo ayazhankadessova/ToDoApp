@@ -66,7 +66,7 @@ const Todo = () => {
       {/* Form Component */}
       <Form input={input} setInput={setInput} addTodo={addTodo} />
       {/* To Do List - render TodoList bu passing todos */}
-      <TodoList todos={todos} />
+      <TodoList todos={todos} fetchData={fetchData} />
       {/* Key - to Do Completed or not? */}
       {/* giffy */}
     </Container>
