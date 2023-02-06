@@ -80,4 +80,12 @@ onSubmit = addtodo
 
 17. Checked post request: saves in array with created at and completed state
 
+* Learned:
+
+1. axios
+2. port change
+3. different between === and == in js
+4. async functions
+5. useEffect
+
 #### Now: create a todo list component and display
