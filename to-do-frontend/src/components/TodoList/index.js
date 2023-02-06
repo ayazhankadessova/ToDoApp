@@ -1,6 +1,6 @@
 import React from 'react'
 
-function TodoList() {
+function TodoList({ todos }) {
   return (
     <div>
       {/* todos - bullet points */}

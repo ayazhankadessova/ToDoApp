@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Container } from './styles'
 import Form from '../Form'
 import axios from '../../axios'
+import TodoList from '../TodoList'
 
 const Todo = () => {
   const [input, setInput] = useState('')
@@ -58,12 +59,14 @@ const Todo = () => {
 
   console.log(todos, 'todos')
 
+  // we have access to todos -> now lets render the todoList
   return (
     <Container>
       <h2>List of ToDos</h2>
       {/* Form Component */}
       <Form input={input} setInput={setInput} addTodo={addTodo} />
-      {/* To Do List */}
+      {/* To Do List - render TodoList bu passing todos */}
+      <TodoList todos={todos} />
       {/* Key - to Do Completed or not? */}
       {/* giffy */}
     </Container>
