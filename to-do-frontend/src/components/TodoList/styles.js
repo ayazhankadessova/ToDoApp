@@ -15,5 +15,5 @@ const Row = styled.li`
   font-size: 1rem;
 `
 
-const Text = styled.p``
-export { ListContainer }
+const Text = styled.span``
+export { ListContainer, Row, Text }
