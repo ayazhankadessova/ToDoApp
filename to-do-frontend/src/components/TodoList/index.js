@@ -1,5 +1,5 @@
 import React from 'react'
-import { ListContainer, Row, Text } from './styles'
+import { ListContainer, Row, Text, DeleteSymbol } from './styles'
 
 function TodoList({ todos }) {
   console.log(todos, 'check')
@@ -13,7 +13,7 @@ function TodoList({ todos }) {
         {todos?.map((todo) => (
           <Row key={todo._id}>
             <Text>{todo.text}</Text>
-            <Text>❌</Text>
+            <DeleteSymbol>✖</DeleteSymbol>
           </Row>
         ))}
       </ListContainer>

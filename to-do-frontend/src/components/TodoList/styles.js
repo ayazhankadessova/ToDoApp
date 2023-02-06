@@ -16,4 +16,7 @@ const Row = styled.li`
 `
 
 const Text = styled.span``
-export { ListContainer, Row, Text }
+
+// or styled(Text)
+const DeleteSymbol = styled.span``
+export { ListContainer, Row, Text, DeleteSymbol }
