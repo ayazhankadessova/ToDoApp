@@ -80,7 +80,7 @@ onSubmit = addtodo
 
 17. Checked post request: saves in array with created at and completed state
 
-* Learned:
+- Learned:
 
 1. axios
 2. port change
