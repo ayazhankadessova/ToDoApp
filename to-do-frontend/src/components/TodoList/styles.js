@@ -10,5 +10,10 @@ const Row = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* Top, bottom 8px; left right 0 */
+  padding: 8px 0;
+  font-size: 1rem;
 `
+
+const Text = styled.p``
 export { ListContainer }
