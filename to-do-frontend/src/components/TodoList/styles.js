@@ -9,6 +9,6 @@ const ListContainer = styled.ul`
 const Row = styled.li`
   display: flex;
   align-items: center;
-  padding-top: 5px;
+  justify-content: space-between;
 `
 export { ListContainer }
