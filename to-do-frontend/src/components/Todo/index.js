@@ -57,7 +57,7 @@ const Todo = () => {
     // console.log('addedtoDo')
   }
 
-  console.log(todos, 'todos')
+  // console.log(todos, 'todos')
 
   // we have access to todos -> now lets render the todoList
   return (
