@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormContainer, Button, Input } from './styles'
+import { FormContainer, Input, Button } from './styles'
 
 function Form({ input, setInput, addTodo }) {
   return (
@@ -10,7 +10,7 @@ function Form({ input, setInput, addTodo }) {
         type='text'
         role='input'
       />
-      {/* pass in the event */}
+      {/* pass the event */}
       <Button type='submit' onClick={(e) => addTodo(e)}>
         Add
       </Button>
