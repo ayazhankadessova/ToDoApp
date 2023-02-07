@@ -10,7 +10,6 @@ function Form({ input, setInput, addTodo }) {
         type='text'
         role='input'
       />
-      {/* pass the event */}
       <Button type='submit' onClick={(e) => addTodo(e)}>
         Add
       </Button>

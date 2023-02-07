@@ -46,7 +46,7 @@ const updateTodo = async (req, res) => {
     // if valid, get access to TodoID
     // _id from mongodb
     const todoID = { _id: id }
-    const update = Todos.deleteOne(todoID)
+    const update = { completed: true }
 
     // find todo and toggle its completed to true
     const updateTodo = await Todos.findByIdAndUpdate(todoID, update)
@@ -72,7 +72,7 @@ const deleteTodo = async (req, res) => {
     }
     const todoID = { _id: id }
     // if valid, declare deletetoDo
-    const deleteTodo = Todos.findOneAndDelete(todoID)
+    const deleteTodo = Todos.findOneAndDelete({ _id: id })
 
     // pass deleted toDo
     res.status(200).send(deleteTodo)

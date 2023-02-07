@@ -1,41 +1,49 @@
-import axios from '../../axios'
 import React from 'react'
-import { ListContainer, Row, Text, DeleteSymbol } from './styles'
+import axios from '../../axios'
+import { ListContainer, Row, Text, DeleteIcon } from './styles'
 
 function TodoList({ todos, fetchData }) {
-  console.log(todos, 'check')
-
-  // UPDATE ToDO
   const updateTodo = async (id) => {
     try {
-      //  The first parameter to axios.put() is the endpoint (passed to requests param), and the 2nd is the HTTP request body.
-      const response = await axios.put(`/todos/${id}`, { id })
+      const response = await axios.put(`/todos/${id}`, {
+        id,
+      })
       fetchData()
       return response.data.json
-      //  updating Todo -> refetch data
     } catch (err) {
-      // outputs an error message to the Web console.
       console.error(err.message)
     }
   }
-  // Delete ToDo
+
+  const deleteTodo = async (id) => {
+    try {
+      const response = await axios.delete(`/todos/${id}`, {
+        id,
+      })
+      fetchData()
+      return response.data.json
+    } catch (err) {
+      console.error(err.message)
+    }
+  }
+
   return (
     <div>
-      {/* todos - bullet points */}
       <ListContainer>
-        {/* render all todos*/}
-
-        {/* check if todos are there; implicit; render for each todo*/}
         {todos?.map((todo) => (
           <Row key={todo._id}>
-            {/* pass id of element we want to update */}
             <Text
               onClick={() => updateTodo(todo._id)}
-              isCompleted={todo.completed === true}
+              isCompleted={todo.completed}
             >
               {todo.text}
             </Text>
-            <DeleteSymbol>X</DeleteSymbol>
+            <DeleteIcon
+              data-testid='close'
+              onClick={() => deleteTodo(todo._id)}
+            >
+              X
+            </DeleteIcon>
           </Row>
         ))}
       </ListContainer>
