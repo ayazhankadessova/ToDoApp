@@ -34,6 +34,7 @@ const connectionURI = process.env.MONGO_URI
 app.use(express.json())
 
 app.use(Cors())
+mongoose.set('strictQuery', false)
 
 // DB config
 mongoose
