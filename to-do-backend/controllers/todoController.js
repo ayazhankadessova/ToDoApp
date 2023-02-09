@@ -84,7 +84,6 @@ const deleteTodo = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(404).send('There is no to do with this id ${id}')
     }
-    const todoID = { _id: id }
     // console.log(todoID)
     // if valid, declare deletetoDo. delete, req.params.id
     const deleteTodo = Todos.findByIdAndRemove({ _id: id })
