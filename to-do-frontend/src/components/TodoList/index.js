@@ -39,10 +39,10 @@ function TodoList({ todos, fetchData }) {
               {todo.text}
             </Text>
             <DeleteIcon
-              data-testid='close'
+              // data-testid='close'
               onClick={() => deleteTodo(todo._id)}
             >
-              XXX
+              X
             </DeleteIcon>
           </Row>
         ))}
