@@ -42,7 +42,7 @@ function TodoList({ todos, fetchData }) {
               data-testid='close'
               onClick={() => deleteTodo(todo._id)}
             >
-              X
+              XXX
             </DeleteIcon>
           </Row>
         ))}
