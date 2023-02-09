@@ -1,3 +1,12 @@
+## MERN Project: TodoList
+
+1. Setup React Application
+2. Remove BoilerPlate
+3. Title and Fave Icon
+4. Normalize.css and global styles
+
+- https://undraw.co
+
 5. Structure the index.js
 6. Create the components: Form, Key, etc & styles.js for every component
 7. Create Form and add it to ToDo component
@@ -79,6 +88,21 @@ onSubmit = addtodo
 - Set input to empty
 
 17. Checked post request: saves in array with created at and completed state
+18. Now: create a todo list component and display
+19. Create row, text -> render them out
+20. Render the todoList in Todo index.js
+21. Fetch data
+22. Set Todos = response.data
+23. Pass Todos as props to TodoList to render it
+24. Try text rendering in the page
+
+- For each todo with unique id -> show text
+- Now: when we click at text element -> update todo
+- When we click on basket: delete todo
+
+25. Get response for id
+26. Fetch data to change state
+27. Change styles
 
 - Learned:
 
@@ -88,4 +112,4 @@ onSubmit = addtodo
 4. async functions
 5. useEffect
 
-#### Now: create a todo list component and display
+#### Current issue: cannot delete by ID
