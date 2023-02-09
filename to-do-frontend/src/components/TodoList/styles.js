@@ -21,4 +21,6 @@ export const Text = styled.span`
   text-decoration: ${(props) => (props.isCompleted ? 'line-through' : 'none')};
 `
 
-export const DeleteIcon = styled.span``
+export const DeleteIcon = styled(Text)`
+  cursor: pointer;
+`

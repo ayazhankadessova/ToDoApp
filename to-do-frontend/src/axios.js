@@ -12,7 +12,7 @@ import axios from 'axios'
 const instance = axios.create({
   // URL which we will fetch data from
   // port in server js
-  baseURL: 'http://localhost:8000',
+  baseURL: 'http://localhost:8000/',
 })
 
 export default instance
