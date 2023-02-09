@@ -1,5 +1,11 @@
 ## MERN Project: TodoList
 
+## Front of the App
+
+<p>
+  <img src="FrontApp.png" width="350" title="hover text">
+</p>
+
 1. Setup React Application
 2. Remove BoilerPlate
 3. Title and Fave Icon
