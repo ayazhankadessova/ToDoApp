@@ -2,9 +2,9 @@
 
 ## Front of the App
 
-<p>
-  <img src="FrontApp.png" width="350" title="hover text">
-</p>
+<div align="center">
+  <img src="FrontApp.png" width="450" title="hover text">
+</div>
 
 1. Setup React Application
 2. Remove BoilerPlate
