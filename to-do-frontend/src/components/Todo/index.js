@@ -38,7 +38,7 @@ function Todo() {
 
   return (
     <Container>
-      <h3>List of Todos</h3>
+      <h3>✦ List of Todos ✦</h3>
       <Form input={input} setInput={setInput} addTodo={addTodo} />
       <TodoList todos={todos} fetchData={fetchData} />
       <Key />
