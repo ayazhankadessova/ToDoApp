@@ -117,5 +117,6 @@ onSubmit = addtodo
 3. different between === and == in js
 4. async functions
 5. useEffect
+6. bfg repo-cleaner to remove password https://fabianlee.org/2019/03/24/git-bfg-for-removing-secrets-from-entire-git-history/
 
 #### Current issue: cannot delete by ID
