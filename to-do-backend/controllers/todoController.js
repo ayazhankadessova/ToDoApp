@@ -62,6 +62,20 @@ const updateTodo = async (req, res) => {
 }
 
 // Delete Todo
+
+// const deleteTodo = asyncHanlder(async (req, res) => {
+//   const todo = await Todo.findById(req.params.id)
+
+//   if (!todo) {
+//     res.status(400)
+//     throw new Error('Todo not found')
+//   }
+
+//   await todo.remove()
+
+//   res.status(200).json({ id: req.params.id })
+// })
+
 const deleteTodo = async (req, res) => {
   // get id from params -> check if it is valid
   const { id } = req.params
@@ -71,8 +85,9 @@ const deleteTodo = async (req, res) => {
       return res.status(404).send('There is no to do with this id ${id}')
     }
     const todoID = { _id: id }
-    // if valid, declare deletetoDo
-    const deleteTodo = Todos.findOneAndDelete({ _id: id })
+    // console.log(todoID)
+    // if valid, declare deletetoDo. delete, req.params.id
+    const deleteTodo = Todos.findByIdAndRemove({ _id: id })
 
     // pass deleted toDo
     res.status(200).send(deleteTodo)

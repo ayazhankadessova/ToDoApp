@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from '../../axios'
 import Form from '../Form'
 import TodoList from '../TodoList'
+import Key from '../Key'
 import { Container } from './styles'
 
 function Todo() {
@@ -37,9 +38,10 @@ function Todo() {
 
   return (
     <Container>
-      <h2>List of Todos</h2>
+      <h3>List of Todos</h3>
       <Form input={input} setInput={setInput} addTodo={addTodo} />
       <TodoList todos={todos} fetchData={fetchData} />
+      <Key />
     </Container>
   )
 }
