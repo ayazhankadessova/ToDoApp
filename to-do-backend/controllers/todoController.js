@@ -4,14 +4,11 @@ const mongoose = require('mongoose')
 // Schema
 const Todos = require('../dbTodos')
 
-// Get Todos List
 // async promises to return a result
 // await - function from mongodb to wait for all results/todos
 const getTodos = async (req, res) => {
   try {
-    // new Todos are at the top
     const allTodos = await Todos.find({}).sort({ createdAt: -1 })
-    // update status and send all Todos
     res.status(200).send(allTodos)
   } catch (error) {
     // when we have error, but give 400, pass in error.message
@@ -19,14 +16,12 @@ const getTodos = async (req, res) => {
   }
 }
 
-// Create a new Todo
 const createTodo = async (req, res) => {
   // extract the data that was sent as JSON in the request body.
   const dbTodo = req.body
   try {
     // create whatever gets send in the request body into the new todo
     const newTodo = await Todos.create(dbTodo)
-    // update status and say that we have successfully created the new Todo
     res.status(201).send(newTodo)
   } catch (error) {
     // when we have error, but give 400, pass in error.message
@@ -34,7 +29,6 @@ const createTodo = async (req, res) => {
   }
 }
 
-// Update Todo -> need to access individual todo -> get id from params
 const updateTodo = async (req, res) => {
   // get id from params -> check if it is valid
   const { id } = req.params
@@ -43,12 +37,10 @@ const updateTodo = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(404).send('There is no to do with this id ${id}')
     }
-    // if valid, get access to TodoID
     // _id from mongodb
     const todoID = { _id: id }
     const update = { completed: true }
 
-    // find todo and toggle its completed to true
     const updateTodo = await Todos.findByIdAndUpdate(todoID, update)
 
     if (!updateTodo) {
@@ -61,21 +53,6 @@ const updateTodo = async (req, res) => {
   }
 }
 
-// Delete Todo
-
-// const deleteTodo = asyncHanlder(async (req, res) => {
-//   const todo = await Todo.findById(req.params.id)
-
-//   if (!todo) {
-//     res.status(400)
-//     throw new Error('Todo not found')
-//   }
-
-//   await todo.remove()
-
-//   res.status(200).json({ id: req.params.id })
-// })
-
 const deleteTodo = async (req, res) => {
   // get id from params -> check if it is valid
   const { id } = req.params
@@ -84,11 +61,8 @@ const deleteTodo = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(404).send('There is no to do with this id ${id}')
     }
-    // console.log(todoID)
-    // if valid, declare deletetoDo. delete, req.params.id
     const deleteTodo = Todos.findByIdAndRemove({ _id: id })
 
-    // pass deleted toDo
     res.status(200).send(deleteTodo)
   } catch (error) {
     // when we have error, but give 400, pass in error.message
